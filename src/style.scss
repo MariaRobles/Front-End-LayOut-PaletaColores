@@ -1,0 +1,56 @@
+@import "base";
+
+.container-1{
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 1fr;
+  //grid-column-gap: 5px;
+
+  .box{
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .base-color{
+    background-color: $color-base-1;
+  }
+
+  @mixin darken-backgrounds ($amount){
+    background-color: darken($color-base-1, $amount);
+  }
+  
+  .darken-1 {
+    @include darken-backgrounds(10%);
+  }
+  .darken-2 {
+    @include darken-backgrounds(20%);
+  }
+  .darken-3 {
+    @include darken-backgrounds(30%);
+  }
+  .darken-4 {
+    @include darken-backgrounds(40%);
+  }
+  
+  @mixin rounded-corners-all($amount){
+    background-color: lighten($color-base-1, $amount);
+  }
+  
+  .lighten-1 {
+    @include rounded-corners-all(10%);
+  }
+  .lighten-2 {
+    @include rounded-corners-all(20%);
+  }
+  .lighten-3 {
+    @include rounded-corners-all(30%);
+  }
+  .lighten-4 {
+    @include rounded-corners-all(40%);
+  }
+
+ 
+}
+
